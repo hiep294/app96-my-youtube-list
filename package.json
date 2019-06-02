@@ -1,0 +1,36 @@
+{
+  "name": "app96-my-youtube-list",
+  "version": "1.0.0",
+  "description": "collect youtube list",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently 'npm run server' 'npm run client'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiep294/app96-my-youtube-list.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hiep294/app96-my-youtube-list/issues"
+  },
+  "homepage": "https://github.com/hiep294/app96-my-youtube-list#readme",
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.5.12"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "client/*"
+    ]
+  },
+  "reference": ""
+}

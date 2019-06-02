@@ -1,0 +1,53 @@
+HOOK
+
+typeof array in JS is object
+const [a, b] = [1, 2, 3]
+=> a = 1, b=2
+=> :Array destructuring
+
+useState(ANY) will return an array: [ANY, FUNC],
+FUNC: is a functional object which is to update ANY
+ANY is considered as the state in class component
+FUNC is consider as setState in class component
+
+ANY can be pure object, functional object, array object, number, string, boolean, ...
+
+one benefit of Hook is that can define many ANY as many states
+
+USEEFFECT()
+funcInUseEffect = () => {
+  // what needs to be developed
+}
+useEffect(funcInUseEffect, secondArgument) 
+funcInUseEffect() will be executed after component completes  rendering or re-rendering, this can be test by console.log
+
+* component renders ~~ it updates the real DOM
+* componentDidUpdate
+should not setState in componentDidUpdate(), otherwise it will run forever. would like to setState in this function, should define prevProps as parameter of this function, search 'use setState in componentDidUpdate()'.
+To conclude, componentDidUpdate() will be called after component has recently RE-rendered
+* componentDidMount() will be called after component has recently rendered FIST TIME
+
+useEffect(funcInUseEffect, secondArgument?) 
+* in default funcInUseEffect() will be called every time after rendering 
+* funcInUseEffect is effect which is used
+
+componentWillUnmount() will be called before a component is removing from DOM => can be used to make some effect for temp Item before it is replace by Item which is responed from server. 
+* a component can be removed in DOM by replacing by another component, going to another website, so should not call setState() in componentWillUnmount()  
+
+* a component is defined in return of render() of a class, not that class or function
+
+* useEffect(() => {
+    console.log(1)
+
+    return funcA;
+  });
+
+funcA can be considered as componentWillUnmount()
+
+* apply with current experience
+useState(initialState)
+useEffect(funcInUseEffect)
+
+consider using position:absolute and display:flex
+
+to get id youtube video: https://gist.github.com/takien/4077195
